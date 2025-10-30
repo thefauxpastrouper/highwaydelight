@@ -5,15 +5,12 @@ services:
     image: mongo:7
     container_name: mongo1
     restart: always
+    ports:
+      - "27017:27017"
     volumes:
       - mongo1_data:/data/db
       - ./mongo-init:/docker-entrypoint-initdb.d
     command: ["--replSet", "rs0", "--bind_ip_all"]
-    healthcheck:
-      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
     networks:
       - app-network
 
@@ -24,11 +21,6 @@ services:
     volumes:
       - mongo2_data:/data/db
     command: ["--replSet", "rs0", "--bind_ip_all"]
-    healthcheck:
-      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
     networks:
       - app-network
 
@@ -39,36 +31,28 @@ services:
     volumes:
       - mongo3_data:/data/db
     command: ["--replSet", "rs0", "--bind_ip_all"]
-    healthcheck:
-      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
     networks:
       - app-network
 
   backend:
     build: ./backend
     container_name: backend
-    restart: always
     ports:
       - "5000:5000"
     environment:
+      - NODE_ENV=production
+      - PORT=5000
       - MONGO_URI=mongodb://mongo1:27017,mongo2:27017,mongo3:27017/mydb?replicaSet=rs0
     depends_on:
-      mongo1:
-        condition: service_healthy
-      mongo2:
-        condition: service_healthy
-      mongo3:
-        condition: service_healthy
+      - mongo1
+      - mongo2
+      - mongo3
     networks:
       - app-network
 
   frontend:
     build: ./frontend
     container_name: frontend
-    restart: always
     ports:
       - "8081:80"
     depends_on:
