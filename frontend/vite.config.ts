@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   define: {
-    'import.meta.env.VITE_API_BASE_URL': JSON.stringify('http://backend:5000')
+    'import.meta.env.VITE_API_BASE_URL': JSON.stringify('https://api.highwaydelight.thefauxpastrouper.space')
   }
 })
 
