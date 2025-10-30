@@ -34,7 +34,7 @@ mongoose.connect(MONGO_URI, {
 
 const PORT = process.env.PORT || 3000;
 
-app.get('/api/experiences/:id', async (req: Request, res: Response) => {
+app.get('/experiences/:id', async (req: Request, res: Response) => {
     try {
         const data = await Experience.findById(req.params.id);
 
@@ -53,7 +53,7 @@ app.get('/api/experiences/:id', async (req: Request, res: Response) => {
     }  
 });
 
-app.get('/api/experiences', async (_req: Request, res: Response) => {
+app.get('/experiences', async (_req: Request, res: Response) => {
     try {
         const data = await Experience.find({});
         
@@ -71,7 +71,7 @@ app.get('/api/experiences', async (_req: Request, res: Response) => {
     }
 });
 
-app.post('/api/bookings', async (req: Request, res: Response) => {
+app.post('/bookings', async (req: Request, res: Response) => {
     const result = BookingSchema.safeParse(req.body);
     
     if (!result.success) {
@@ -196,7 +196,7 @@ app.post('/api/bookings', async (req: Request, res: Response) => {
     }
 });
 
-app.post('/api/promo/validate', async(req:Request, res:Response)=>{
+app.post('/promo/validate', async(req:Request, res:Response)=>{
     const result = PromoCodeSchema.safeParse(req.body);
       
     if (!result.success) {
