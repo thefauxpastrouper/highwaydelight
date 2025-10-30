@@ -1,0 +1,77 @@
+[
+  {
+    "title": "White-Water River Rafting Adventure",
+    "location": "Bangalore, Karnataka",
+    "price": 2999,
+    "image": "https://example.com/images/rafting-bangalore.jpg",
+    "description": "An exhilarating rafting experience in the rapids just outside Bangalore.",
+    "fullDescription": "Experience the thrill of river rafting with expert guides. All safety gear is provided and you will navigate class III & IV rapids with a professional team. Great for beginners and seasoned paddlers alike.",
+    "included": ["Safety gear", "Guided tour", "Refreshments", "Transport to/from meeting point"],
+    "duration": "3-4 hours",
+    "groupSize": "Up to 12 people",
+    "dates": [
+      {
+        "date": "2025-11-15",
+        "availableSlots": 8
+      },
+      {
+        "date": "2025-11-22",
+        "availableSlots": 5
+      },
+      {
+        "date": "2025-12-06",
+        "availableSlots": 12
+      }
+    ]
+  },
+  {
+    "title": "Sunset Kayak Tour on the Coast",
+    "location": "Goa, India",
+    "price": 3499,
+    "image": "https://example.com/images/kayak-goa.jpg",
+    "description": "Enjoy a serene sunset kayak tour along the scenic Goa shoreline.",
+    "fullDescription": "Paddle through calm coastal waters, spot marine life, and enjoy a drinks break at sunset. All kayaks and safety equipment provided, suitable for all ages and skill levels.",
+    "included": ["Safety gear", "Guided tour", "Refreshments"],
+    "duration": "2 hours",
+    "groupSize": "Up to 8 people",
+    "dates": [
+      {
+        "date": "2025-10-30",
+        "availableSlots": 4
+      },
+      {
+        "date": "2025-11-07",
+        "availableSlots": 6
+      },
+      {
+        "date": "2025-11-14",
+        "availableSlots": 2
+      }
+    ]
+  },
+  {
+    "title": "Mountain Trek & Camp Experience",
+    "location": "Manali, Himachal Pradesh",
+    "price": 7999,
+    "image": "https://example.com/images/trek-manali.jpg",
+    "description": "A two-day guided mountain trek with a night under the stars at our wilderness camp.",
+    "fullDescription": "Join our experienced trek guides as you climb through pine forests and alpine meadows. Camp overnight with bonfire, dinner, breakfast and sunrise yoga included. Good fitness level recommended.",
+    "included": ["Safety gear", "Guided tour", "Refreshments", "Dinner & Breakfast", "Camping equipment"],
+    "duration": "2 days",
+    "groupSize": "Up to 10 people",
+    "dates": [
+      {
+        "date": "2025-11-20",
+        "availableSlots": 10
+      },
+      {
+        "date": "2025-12-04",
+        "availableSlots": 8
+      },
+      {
+        "date": "2025-12-18",
+        "availableSlots": 10
+      }
+    ]
+  }
+]
