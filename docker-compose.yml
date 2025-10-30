@@ -70,7 +70,7 @@ services:
     container_name: frontend
     restart: always
     ports:
-      - "8080:80"
+      - "8081:80"
     depends_on:
       - backend
     networks:
