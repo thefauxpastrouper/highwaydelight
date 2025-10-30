@@ -7,6 +7,7 @@ import { type Experience } from "./data/experiences";
   
 
 const getExperiences = async (): AxiosPromise<Experience[]> => {
+  console.log("Fetching experiences from API:", import.meta.env.VITE_API_BASE_URL);
   return api.get("/experiences");
 };
 const Home = () => {
