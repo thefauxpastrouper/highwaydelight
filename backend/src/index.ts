@@ -100,7 +100,6 @@ app.post('/bookings', async (req: Request, res: Response) => {
     console.log("Incoming payment request:", req.body);
     
     try {
-        console.log("hi")
 
         // ✅ Update available seats - FIXED: Correct path for nested array update
         const updatedExperience = await Experience.findOneAndUpdate(
